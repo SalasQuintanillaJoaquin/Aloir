@@ -10,7 +10,7 @@ android {
         applicationId = "com.miempresa.aloir"
         minSdk = 23
         targetSdk = 36
-        versionCode = 3
+        versionCode = 10
         versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
