@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color  name="color_launch">#B01515</color>
-    <color  name="color_card">#000029</color>
-    <color  name="color_pregunta">#32FD6B</color>
-    <color name="colorRojo">#FF0000</color>
-    <color name="colorAzul">#0000FF</color>
+    <!-- Azul marino original de Eargym -->
+    <color name="eg_bg">#0E1C49</color>
+    <color name="eg_bg_deep">#08113A</color>
+    <color name="eg_surface">#16276A</color>
+    <color name="eg_surface_high">#1E3484</color>
+    <color name="eg_stroke">#2B4399</color>
+    <color name="eg_text">#FFFFFF</color>
+    <color name="eg_text_muted">#AEBBEA</color>
+    <color name="eg_ink">#0E1C49</color>
 
+    <!-- Verde neón del logo -->
+    <color name="eg_neon">#33FF6E</color>
+    <color name="eg_neon_dark">#16C750</color>
+
+    <!-- Acentos -->
+    <color name="eg_yellow">#FFD43B</color>
+    <color name="eg_orange">#FF9F1C</color>
+    <color name="eg_red">#FF4D6D</color>
+    <color name="eg_blue">#3DB2FF</color>
+    <color name="eg_violet">#9B7BFF</color>
+    <color name="eg_pink">#FF6FB5</color>
+
+    <!-- Dificultad de los 7 niveles: de verde (fácil) a morado (experto) -->
+    <color name="level_1">#33FF6E</color>
+    <color name="level_2">#A6F03C</color>
+    <color name="level_3">#FFD43B</color>
+    <color name="level_4">#FFB020</color>
+    <color name="level_5">#FF8A3D</color>
+    <color name="level_6">#FF4D6D</color>
+    <color name="level_7">#D46BFF</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
 </resources>

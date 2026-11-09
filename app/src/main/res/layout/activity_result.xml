@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ResultActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="@dimen/content_max_width">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_eargym_neon" />
+
+            <TextView
+                android:id="@+id/resultTitle"
+                style="@style/Eargym.Text.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                tools:text="Nivel 1 · Fácil" />
+
+            <TextView
+                style="@style/Eargym.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/puntaje" />
+
+            <TextView
+                android:id="@+id/resultScore"
+                style="@style/Eargym.Text.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_score"
+                android:letterSpacing="0.12"
+                android:paddingStart="28dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="28dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/eg_ink"
+                android:textSize="@dimen/text_score"
+                tools:text="0040" />
+
+            <LinearLayout
+                android:id="@+id/resultStats"
+                style="@style/Eargym.Panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/resultCorrect"
+                    style="@style/Eargym.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_subtitle"
+                    tools:text="Respuestas correctas: 4" />
+
+                <TextView
+                    android:id="@+id/resultWrong"
+                    style="@style/Eargym.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_subtitle"
+                    tools:text="Respuestas incorrectas: 6" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/resultMessage"
+                style="@style/Eargym.Text.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:textColor="@color/eg_neon"
+                tools:text="Tú puedes, sigue intentando" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resultNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Siguiente nivel"
+                app:icon="@drawable/ic_levels"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resultRetry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Repetir"
+                app:icon="@drawable/ic_replay"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resultBack"
+                style="@style/Eargym.Button.Outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Volver" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

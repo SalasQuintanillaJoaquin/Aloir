@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.Eargym.Splash" parent="Theme.Eargym">
+        <item name="android:windowBackground">@color/eg_bg</item>
+        <item name="android:windowSplashScreenBackground">@color/eg_bg</item>
+    </style>
+</resources>

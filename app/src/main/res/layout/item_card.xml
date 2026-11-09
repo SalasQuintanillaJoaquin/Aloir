@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tarjeta con icono, título, descripción y un contenedor para botones -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/cardIconBox"
+            android:layout_width="52dp"
+            android:layout_height="52dp">
+
+            <ImageView
+                android:id="@+id/cardIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                app:tint="@color/eg_ink"
+                tools:src="@drawable/ic_interval" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardTitle"
+                style="@style/Eargym.Text.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Intervalos" />
+
+            <TextView
+                android:id="@+id/cardText"
+                style="@style/Eargym.Text.Muted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="@dimen/text_small"
+                tools:text="¿Qué distancia hay entre las dos notas?" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cardChevron"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            android:visibility="gone"
+            app:tint="@color/eg_text_muted" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</LinearLayout>

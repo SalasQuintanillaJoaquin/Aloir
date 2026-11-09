@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo azul marino con degradado suave y notas musicales tenues -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:angle="270"
+                android:endColor="@color/eg_bg_deep"
+                android:startColor="@color/eg_bg" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/bg_notes_full" />
+</layer-list>

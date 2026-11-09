@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Archivos de Android Studio propios de cada computadora
+/.idea/deploymentTargetSelector.xml
+/.idea/deploymentTargetDropDown.xml
+/.idea/appInsightsSettings.xml
+/.idea/material_theme_project_new.xml
+/.idea/androidTestResultsUserPreferences.xml

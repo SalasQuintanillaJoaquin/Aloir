@@ -1,82 +1,54 @@
 package com.miempresa.aloir;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
+import com.miempresa.aloir.ui.Dialogs;
+import com.miempresa.aloir.ui.Ui;
 
-public class MainActivity extends AppCompatActivity {
+/** Menú principal: Jugar, Más ejercicios, Piano, Acerca de y Salir. */
+public class MainActivity extends BaseActivity {
 
-    Button Jugar, Acercade, Salir;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Botones //
-        Jugar = findViewById(R.id.btnJugar);
-        Acercade = findViewById(R.id.btnAcercade);
-        Salir = findViewById(R.id.btnSalir);
-
-
-        // Acciones //
-        Salir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-                sweetAlertDialog.setTitleText("¿Desea salir de la aplicación?");
-                sweetAlertDialog.setConfirmText("Si");
-                sweetAlertDialog.setCancelText("No");
-                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        finish(); // Finaliza la actividad si el usuario hace clic en "Si"
-                    }
-                });
-                sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.dismissWithAnimation(); // Cierra la alerta si el usuario hace clic en "No"
-                    }
-                });
-
-                // Evita que el diálogo se cierre al tocar fuera de él
-                sweetAlertDialog.getWindow().getDecorView().getRootView().setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        return true;
-                    }
-                });
-
-                sweetAlertDialog.show();
+        if (savedInstanceState == null) {
+            Ui.popIn(findViewById(R.id.menuLogo), 0);
+            Ui.riseIn(findViewById(R.id.menuTitle), 150);
+            Ui.riseIn(findViewById(R.id.menuTagline), 200);
+            ViewGroup buttons = findViewById(R.id.menuButtons);
+            for (int i = 0; i < buttons.getChildCount(); i++) {
+                Ui.riseIn(buttons.getChildAt(i), 250 + 70L * i);
             }
-        });
+        }
 
+        findViewById(R.id.btnJugar).setOnClickListener(v -> open(LevelsActivity.class));
+        findViewById(R.id.btnExtras).setOnClickListener(v -> open(ExtrasActivity.class));
+        findViewById(R.id.btnPiano).setOnClickListener(v -> open(PianoActivity.class));
+        findViewById(R.id.btnAcercade).setOnClickListener(v -> open(AboutActivity.class));
+        findViewById(R.id.btnSalir).setOnClickListener(v -> confirmExit());
+    }
 
-        Jugar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Jugar_Activity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-            }
-        });
-        Acercade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Acerca_Activity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-            }
-        });
+    private void open(Class<?> screen) {
+        startActivity(new Intent(this, screen));
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+    }
+
+    private void confirmExit() {
+        new Dialogs.Builder(this)
+                .icon(R.drawable.ic_exit, R.color.eg_red)
+                .title("¿Deseas salir de Eargym?")
+                .message("Tu oído te espera para seguir entrenando.")
+                .positive("Sí, salir", this::finish)
+                .negative("No, quedarme", null)
+                .show();
+    }
+
+    @Override
+    protected void onBack() {
+        confirmExit();
     }
 }

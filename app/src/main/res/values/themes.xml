@@ -1,16 +1,125 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Aloir" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+    <!-- Eargym usa siempre su azul marino original, también con el modo oscuro del sistema -->
+    <style name="Theme.Eargym" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/eg_neon</item>
+        <item name="colorPrimaryVariant">@color/eg_neon_dark</item>
+        <item name="colorOnPrimary">@color/eg_ink</item>
+        <item name="colorSecondary">@color/eg_blue</item>
+        <item name="colorOnSecondary">@color/eg_ink</item>
+        <item name="colorSurface">@color/eg_surface</item>
+        <item name="colorOnSurface">@color/eg_text</item>
+        <item name="android:colorBackground">@color/eg_bg</item>
+        <item name="android:windowBackground">@drawable/bg_screen</item>
+        <item name="android:statusBarColor">@color/eg_bg</item>
+        <item name="android:navigationBarColor">@color/eg_bg_deep</item>
+        <item name="android:textColorPrimary">@color/eg_text</item>
+        <item name="android:textColorSecondary">@color/eg_text_muted</item>
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="fontFamily">@font/fredoka_medium</item>
+        <item name="materialButtonStyle">@style/Eargym.Button</item>
+    </style>
+
+    <style name="Theme.Eargym.Splash">
+        <item name="android:windowBackground">@color/eg_bg</item>
+    </style>
+
+    <!-- Diálogos propios: fondo transparente, la tarjeta la dibuja el layout -->
+    <style name="Theme.Eargym.Dialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimAmount">0.7</item>
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="fontFamily">@font/fredoka_medium</item>
+        <item name="materialButtonStyle">@style/Eargym.Button</item>
+    </style>
+
+    <!-- Tipografía: Fredoka, redondeada y muy legible para todas las edades -->
+    <style name="Eargym.Text" parent="">
+        <item name="android:textColor">@color/eg_text</item>
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="Eargym.Text.Display">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/text_display</item>
+    </style>
+
+    <style name="Eargym.Text.Title">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <style name="Eargym.Text.Subtitle">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+    </style>
+
+    <style name="Eargym.Text.Body">
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+    <style name="Eargym.Text.Muted">
+        <item name="android:textColor">@color/eg_text_muted</item>
+        <item name="android:fontFamily">@font/fredoka_regular</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <style name="Eargym.Text.Label">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/eg_text_muted</item>
+    </style>
+
+    <!-- Botones -->
+    <style name="Eargym.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/eg_ink</item>
+        <item name="backgroundTint">@color/eg_neon</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="iconTint">@color/eg_ink</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">12dp</item>
+        <item name="rippleColor">#33000000</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón blanco del menú, como en el diseño original -->
+    <style name="Eargym.Button.Menu">
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="iconGravity">start</item>
+        <item name="iconSize">26dp</item>
+        <item name="iconPadding">18dp</item>
+    </style>
+
+    <style name="Eargym.Button.Outline" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/eg_text</item>
+        <item name="strokeColor">@color/eg_stroke</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="iconTint">@color/eg_text</item>
+        <item name="rippleColor">#22FFFFFF</item>
+    </style>
+
+    <style name="Eargym.Panel" parent="">
+        <item name="android:background">@drawable/bg_panel</item>
+        <item name="android:padding">16dp</item>
     </style>
 </resources>

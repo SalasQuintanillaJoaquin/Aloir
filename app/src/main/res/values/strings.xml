@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">Eargym</string>
-    <string name="entrenar_tu_oido">Entrenar tu oido</string>
+    <string name="entrenar_tu_oido">Entrenar tu oído</string>
     <string name="para">para</string>
-    <string name="formato_pregunta">%d/%d preguntas</string>
+    <string name="escucha_y_aprende">Escucha y aprende</string>
+    <string name="tagline">Tu compañero musical para afinar el oído</string>
+    <string name="jugar">Jugar</string>
+    <string name="mas_ejercicios">Más ejercicios</string>
+    <string name="piano">Piano</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="salir">Salir</string>
+    <string name="selecciona_dificultad">Selecciona tu dificultad</string>
+    <string name="niveles_ayuda">Escucha dos sonidos y descubre si el segundo está más alto, más bajo o igual. Cada nivel desafina menos la nota.</string>
+    <string name="pregunta_afinacion">¿El segundo sonido que escuchas está alto, bajo o igual?</string>
+    <string name="sonido_1">Sonido 01</string>
+    <string name="sonido_2">Sonido 02</string>
+    <string name="alto">Alto</string>
+    <string name="igual">Igual</string>
+    <string name="bajo">Bajo</string>
+    <string name="ejercicio">Ejercicio</string>
+    <string name="puntaje">Puntaje</string>
 </resources>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TuningActivity">
+
+    <include layout="@layout/view_title_bar" />
+
+    <ProgressBar
+        android:id="@+id/tuningProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginStart="@dimen/screen_padding"
+        android:layout_marginEnd="@dimen/screen_padding"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_neon" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <com.miempresa.aloir.ui.MaxWidthLinearLayout
+            android:id="@+id/tuningColumn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="@dimen/content_max_width"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <TextView
+                android:id="@+id/tuningQuestion"
+                style="@style/Eargym.Text.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/pregunta_afinacion"
+                android:textColor="@color/eg_neon" />
+
+            <!-- Nota en el pentagrama -->
+            <LinearLayout
+                style="@style/Eargym.Panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/tuningStaff"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/staff_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_staff"
+                    android:contentDescription="Nota en el pentagrama"
+                    android:padding="6dp"
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/do4" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Eargym.Text.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nota" />
+
+                    <TextView
+                        android:id="@+id/tuningNote"
+                        style="@style/Eargym.Text.Display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/eg_neon"
+                        tools:text="DO 4" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Sonido 01 · respuestas · Sonido 02 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:minHeight="@dimen/sound_row_min"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_panel"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        style="@style/Eargym.Text.Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sonido_1"
+                        android:textSize="@dimen/text_body" />
+
+                    <com.miempresa.aloir.ui.MeterView
+                        android:id="@+id/meter1"
+                        android:layout_width="26dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/play1"
+                        style="@style/Eargym.Button"
+                        android:layout_width="@dimen/play_button"
+                        android:layout_height="@dimen/play_button"
+                        android:contentDescription="Reproducir sonido 1"
+                        android:padding="0dp"
+                        app:backgroundTint="@color/eg_blue"
+                        app:cornerRadius="100dp"
+                        app:icon="@drawable/ic_play"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="30dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/answerHigh"
+                        style="@style/Eargym.Button"
+                        android:layout_width="@dimen/answer_button"
+                        android:layout_height="@dimen/answer_button"
+                        android:contentDescription="Más alto"
+                        android:padding="0dp"
+                        app:backgroundTint="@color/eg_neon"
+                        app:cornerRadius="100dp"
+                        app:icon="@drawable/ic_arrow_up"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="32dp" />
+
+                    <TextView
+                        style="@style/Eargym.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:importantForAccessibility="no"
+                        android:text="@string/alto"
+                        android:textSize="@dimen/text_small" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/answerEqual"
+                        style="@style/Eargym.Button"
+                        android:layout_width="@dimen/answer_button"
+                        android:layout_height="@dimen/answer_button"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="Igual"
+                        android:padding="0dp"
+                        app:backgroundTint="@color/eg_yellow"
+                        app:cornerRadius="100dp"
+                        app:icon="@drawable/ic_equal"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="32dp" />
+
+                    <TextView
+                        style="@style/Eargym.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:importantForAccessibility="no"
+                        android:text="@string/igual"
+                        android:textSize="@dimen/text_small" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/answerLow"
+                        style="@style/Eargym.Button"
+                        android:layout_width="@dimen/answer_button"
+                        android:layout_height="@dimen/answer_button"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="Más bajo"
+                        android:padding="0dp"
+                        app:backgroundTint="@color/eg_red"
+                        app:cornerRadius="100dp"
+                        app:icon="@drawable/ic_arrow_down"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="32dp" />
+
+                    <TextView
+                        style="@style/Eargym.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:importantForAccessibility="no"
+                        android:text="@string/bajo"
+                        android:textSize="@dimen/text_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_panel"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        style="@style/Eargym.Text.Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sonido_2"
+                        android:textSize="@dimen/text_body" />
+
+                    <com.miempresa.aloir.ui.MeterView
+                        android:id="@+id/meter2"
+                        android:layout_width="26dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/play2"
+                        style="@style/Eargym.Button"
+                        android:layout_width="@dimen/play_button"
+                        android:layout_height="@dimen/play_button"
+                        android:contentDescription="Reproducir sonido 2"
+                        android:padding="0dp"
+                        app:backgroundTint="@color/eg_violet"
+                        app:cornerRadius="100dp"
+                        app:icon="@drawable/ic_play"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="30dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Ejercicio y puntaje -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_panel"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/Eargym.Text.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ejercicio" />
+
+                    <TextView
+                        android:id="@+id/tuningCounter"
+                        style="@style/Eargym.Text.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="1/10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_panel"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/Eargym.Text.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/puntaje" />
+
+                    <TextView
+                        android:id="@+id/tuningScore"
+                        style="@style/Eargym.Text.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/eg_neon"
+                        tools:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.miempresa.aloir.ui.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -4,51 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:background="@drawable/bg_screen"
     tools:context=".Splash">
 
     <ImageView
-        android:id="@+id/logoimageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/splashLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_eargym_neon"
+        app:layout_constraintBottom_toTopOf="@id/splashFor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/logo_eargym1" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_max="460dp"
+        app:layout_constraintWidth_percent="0.78" />
 
     <TextView
-        android:id="@+id/aloirtextView"
-        android:layout_width="match_parent"
+        android:id="@+id/splashFor"
+        style="@style/Eargym.Text.Muted"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/amaranth"
+        android:layout_marginTop="40dp"
+        android:text="@string/para"
+        android:textSize="@dimen/text_subtitle"
+        app:layout_constraintBottom_toTopOf="@id/splashTagline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splashLogo" />
+
+    <TextView
+        android:id="@+id/splashTagline"
+        style="@style/Eargym.Text.Display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/entrenar_tu_oido"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textColor="@color/eg_neon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoimageView" />
-
-    <TextView
-        android:id="@+id/paratextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/amaranth"
-        android:text="@string/para"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/logoimageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoimageView" />
+        app:layout_constraintTop_toBottomOf="@id/splashFor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
